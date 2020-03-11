@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>My first Vue app</title>
+	<script src="https://unpkg.com/vue"></script>
+	<style type="text/css">
+		.popup { width: 500px; display: flex; background: #152f3c; color: white; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-content: flex-start; align-items: flex-start; }
+		img { position: absolute; left: -40px; width: 150px; }
+		.content { margin: 0 55px; }
+		h4 { margin-bottom: 5px; }
+		p { margin-top:5px; }
+		strong { align-self: stretch; padding: 10px;}
+	</style>
+</head>
+
+<body>
+	<div id="app">
+		<label for="appName">Enter Application Name</label>
+		<input v-model="appName" placeholder="E.g. coffee maker"/>
+		<p>{{ appName }}</p>
+
+		<div id="sophos" class="popup">
+			<img src="https://gateworx.net/gate-blog/wp-content/uploads/2016/12/sophos-shield.png"/>
+			<div class="content">
+				<h4>Sophos Endpoint</h4>
+				<span>Use of application {{appName}} has been blocked by your administrator</span><br/>
+				<p>For assistance, please contact the I.T. Help Desk: <br/>
+					ITSupport@circlegraphicsonline.com</p>
+				</div>
+				<strong>X</strong>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				appName: 'Coffee Maker',
+			},
+		})
+	</script>
+</body>
+
+</html>
